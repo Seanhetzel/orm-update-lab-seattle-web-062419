@@ -63,14 +63,13 @@ class Student
   end
 
   def self.find_by_name(name)
-    sql = <<-SQL 
-    SELECT name 
+    sql = <<-SQL
+    SELECT name
     FROM students
     WHERE name = #{name}
     SQL
 
     DB[:conn].execute(sql, name)
   end
-
 
 end
